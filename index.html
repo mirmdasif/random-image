@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Random Image</title>
+
+    <style type="text/css">
+        .full-screen {
+            position: fixed;
+            top : 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-screen" style="background: black">
+        <canvas id="canvas">
+
+        </canvas>
+    </div>
+
+    <script>
+        var randomPlotter = function () {
+
+            console.log("OLLo")
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+
+            ctx.fillStyle = "green";
+            ctx.fillRect(10, 10, 10, 10);
+
+            for( i=0;i<canvas.width;i+=10) {
+
+
+                for(j=0;j<canvas.height;j+=10) {
+                    ctx.fillStyle = 'rgb('+Math.floor(Math.random() * 255) + 0+','
+                            +Math.floor(Math.random() * 255) + 0+
+                            ','+Math.floor(Math.random() * 255) + 0+')';
+                    ctx.fillRect(i, j, 10, 10);
+                }
+            }
+        }
+        window.onload = function() {
+
+            setInterval(randomPlotter,1);
+        };
+
+    </script>
+</body>
+</html>
