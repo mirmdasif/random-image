@@ -35,19 +35,27 @@
             ctx.fillRect(10, 10, 10, 10);
 
             for( i=0;i<canvas.width;i+=10) {
-
-
                 for(j=0;j<canvas.height;j+=10) {
-                    ctx.fillStyle = 'rgb('+Math.floor(Math.random() * 255) + 0+','
-                            +Math.floor(Math.random() * 255) + 0+
-                            ','+Math.floor(Math.random() * 255) + 0+')';
-                    ctx.fillRect(i, j, 10, 10);
+                    
+                    var red = Math.floor(Math.random() * 255) + 0;
+                    var green =Math.floor(Math.random() * 255) + 0;
+                    var blue = Math.floor(Math.random() * 255) + 0;
+                    ctx.fillStyle = 'rgb('+red+','+green+','+blue+')';
+                    
+                    var centerX = i;
+                    var centerY = j;
+                    var radius = 5;
+                    
+                    context.beginPath();
+                    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                    context.fill();
+                    context.stroke();
                 }
             }
         }
         window.onload = function() {
 
-            setInterval(randomPlotter,1);
+            setInterval(randomPlotter,3000);
         };
 
     </script>
