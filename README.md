@@ -1,2 +1,2 @@
 # random-image
-http://sadasidha.github.io/random-image/
+http://mirmdasif.github.io/random-image/
